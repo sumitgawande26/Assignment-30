@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 30</title>
+    <style>
+        body {
+            background-color: #4158D0;
+            background-image: linear-gradient(296deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+            min-height: 100vh;
+        }
+
+        .app-title {
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .dice {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .btn {
+            width: 200px;
+            display: block;
+            margin: 20px auto;
+            font-size: 25px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #FF3CAC;
+            background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="app-title"> Roll the Dice</h1>
+        <img src="./img/dice.png" alt="Dice" class="dice" id="dice-img" />
+        <button class="btn" onclick="roll()">Roll Dice</button>
+    </div>
+    <script>
+        function roll() {
+            const min = 1;
+            const max = 6;
+            const randomNumber = Math.round(Math.random() * (max - min)) + min;
+            const imgElement = document.getElementById('dice-img');
+            switch (randomNumber) {
+                case 1:
+                    imgElement.src = './img/1.png';
+                    break;
+                case 2:
+                    imgElement.src = './img/2.png';
+                    break;
+                case 3:
+                    imgElement.src = './img/3.png';
+                    break;
+                case 4:
+                    imgElement.src = './img/4.png';
+                    break;
+                case 5:
+                    imgElement.src = './img/5.png';
+                    break;
+                case 6:
+                    imgElement.src = './img/6.png';
+                    break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
